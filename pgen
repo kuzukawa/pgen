@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'securerandom'
+
+def main
+  len = ARGV[0] =~ /^[0-9]+$/ ? ARGV[0].to_i : 8
+  d = SecureRandom.base64(len).slice(0, len)
+  puts d
+end
+
+main
